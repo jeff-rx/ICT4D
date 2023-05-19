@@ -19,16 +19,17 @@ Usage
 
 ### The Malaria Information Helpline provides the following menu options:
 
-Language Selection:
+#### Language Selection:
 Press 1 for English.
 Press 2 for French.
-Main Menu (English):
+#### Main Menu (English):
 Press 1 for Malaria Symptoms.
 Press 2 for Malaria Prevention.
 Press 3 for Malaria Treatment.
 Press 4 to go directly to Artemesia Dosage.
 Press 5 to exit the helpline.
-Main Menu (French):
+
+#### Main Menu (French):
 Press 1 for Malaria Symptoms (French).
 Press 2 for Malaria Prevention.
 Press 3 for Malaria Treatment (French).
