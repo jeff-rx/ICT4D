@@ -1,10 +1,10 @@
 
 # ICT 4 Development, project at VU, May 2023, Group 18.
 
-##VoiceXML Malaria Information Helpline
+## VoiceXML Malaria Information Helpline
 This repository contains the source code for a VoiceXML-based Malaria Information Helpline. It provides users with information about malaria, its symptoms, prevention methods, treatment options, and more.
 
-##Prerequisites
+## Prerequisites
 A VoiceXML interpreter or platform that supports VoiceXML 2.0
 Internet access to retrieve audio files referenced in the code
 Getting Started
@@ -16,7 +16,8 @@ Deploy the VoiceXML code (malaria_information.vxml) to your VoiceXML interpreter
 Ensure the audio files referenced in the code are accessible via the specified URLs. If needed, host the audio files on your own server and update the URLs accordingly.
 Access the Malaria Information Helpline using a VoiceXML-compatible device or software, and follow the voice prompts to navigate through the menus and obtain the desired information.
 Usage
-The Malaria Information Helpline provides the following menu options:
+
+### The Malaria Information Helpline provides the following menu options:
 
 Language Selection:
 Press 1 for English.
@@ -35,7 +36,7 @@ Press 4 to go directly to Artemesia Dosage (French).
 Press 5 to exit the helpline.
 Throughout the helpline, users will receive audio prompts and can use DTMF tones to make selections.
 
-##Customization
+## Customization
 You can customize the Malaria Information Helpline to fit your specific requirements. 
 
 Updating the audio prompts and messages to match your organization's branding or preferences.
