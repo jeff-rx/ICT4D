@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<vxml xmlns="http://www.w3.org/2001/vxml" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.w3.org/2001/vxml 
+    http://www.w3.org/TR/voicexml20/vxml.xsd"
+    version="2.0">
+    
+    
+    <menu id="menuLang" dtmf="true">
+
+        <prompt>
+        Welcome to ARIA. The Malaria Information Helpline. Press 1 for English. Press 2 for French.
+        <audio src="https://www.dropbox.com/s/tmba384ker0fzvd/Language.wav?dl=1"/>
+        </prompt>
+        <choice dtmf="1" next="#menu1"/>
+        <choice dtmf="2" next="#French3choices"/>
+    </menu>
+
+    <menu id="menu1" dtmf="true">
+        <prompt> Press 1 for Malaria Symptoms, Press 2 for Malaria Prevention, Press 3 for Malaria Treatment. Press 4 to go directly go to Artemesia Dosage. </prompt>
+        <choice dtmf="1" next="#malariaSymptoms"/>
+        <choice dtmf="2" next="#learnMore"/>
+        <choice dtmf="3" next="#treatment_methods"/>
+        <choice dtmf="4" next="#artemisia_dosage"/>
+        <choice dtmf="5" next="#goodbye"/>
+    </menu>
+
+    <menu id="French3choices" dtmf="true">
+        <audio src="https://www.dropbox.com/s/ubopbmebjn6ivq2/WelcomePrompt.wav?dl=1"/>
+        <choice dtmf="1" next="#malariaSymptomsF"/>
+        <choice dtmf="2" next="#learnMore"/>
+        <choice dtmf="2" next="#treatment_methodsF"/>
+        <choice dtmf="4" next="#artemisia_dosageF"/>
+        <choice dtmf="5" next="#goodbyeF"/>
+    </menu>
+
+    <menu id="treatment_methods" dtmf="true">
+
+        <prompt> To treat Malaria, it is recommended to see a doctor, and get medicine at a hospital. 
+        If you have no acces to a doctor or a hospital, please continue for instructions to make Artemisian based tea. 
+        Press 1 to forward your call to a doctor. Press 2 for an instructions for Artemisian based tea.
+
+        </prompt>
+        <choice dtmf="1" next="#doctor"/>
+        <choice dtmf="2" next="#artemisia_general"/>
+
+    </menu>
+    
+    <menu id="treatment_methodsF" dtmf="true">
+
+        <audio src="https://www.dropbox.com/s/xcvdseizoi9i10b/MalariaTreatment_v2.wav?dl=1"/>
+        
+        <choice dtmf="1" next="#doctorF"/>
+        <choice dtmf="2" next="#artemisia_generalF"/>
+        
+    </menu>
+
+
+
+
+    <menu id="artemisia_general" dtmf="true">
+
+         <prompt> Artemisia tea is known for its potential therapeutic benefits and can be used by adults, infants, children, and pregnant women. 
+         However, in cases of pregnancy, it is advised to avoid consuming this tea during the first three months of pregnancy.
+         Press 1 for preparation instructions. Press 2 if you have used Artemisia before </prompt>
+
+         <choice dtmf="1" next="#artemisia_dosage"/>
+         <choice dtmf="2" next="#artemisia_before"/>
+
+    </menu>
+
+        <menu id="artemisia_generalF" dtmf="true">
+
+         <audio src="https://www.dropbox.com/s/wrqotzwq15qjez4/ArtemisiaGeneral.wav?dl=1"/>
+         <choice dtmf="1" next="#artemisia_dosageF"/>
+         <choice dtmf="2" next="#artemisia_beforeF"/>
+
+    </menu>
+
+
+    <menu id="artemisia_dosage" dtmf="true">
+
+    <prompt> The tea can be prepared as follows:
+
+    1. Boil one litre of water.
+    2. Add either a small handful of dried artemisia leaves and stems (approximately 5 grams) or four handfuls of freshly cut artemisia plant.
+    3. Allow the tea to infuse for 15 minutes as it cools down.
+    4. Strain the leaves and consume the tea on the same day.
+    For adults, drinking one liter of tea per day for seven days should alleviate the symptoms. If the symptoms disappear within a seven-day period, it is still advised to continue drinking the tea until 7 days have passed. For children under five years of age or weighing less than 15 kg, the dosage should be reduced to half a litre of tea per day.
+    
+    To hear the recipe again, press 1.
+    Did you use artemisia for 7 days and you still feel sick?  
+    Immediately seek a doctor. Press 2 to be forwarded to a doctor.
+    </prompt>   
+
+         <choice dtmf="1" next="#artemisia_dosage"/>
+         <choice dtmf="2" next="#doctor"/>
+
+    </menu>
+
+    <menu id="artemisia_dosageF" dtmf="true">
+
+       <audio src="https://www.dropbox.com/s/teyxmreouxa3grr/ArtemisiaPreparation.wav?dl=1"/>
+         
+         <choice dtmf="1" next="#artemisia_dosageF"/>
+         <choice dtmf="2" next="#doctorF"/>
+
+    </menu>
+
+
+    <menu id="artemisia_before" dtmf="true">
+
+        <prompt>Did you use artemisia for 7 days and you still feel sick?  Immediately seek a doctor. Press 1 to be forwarded to a doctor</prompt>
+            
+        <choice dtmf="1" next="#doctor"/>
+
+    </menu>
+
+
+    <menu id="artemisia_beforeF" dtmf="true">
+
+       <audio src="https://www.dropbox.com/s/uv47agvn8dlcpsp/7days.wav?dl=1"/>
+
+       <choice dtmf="1" next="#doctorF"/>
+
+    </menu>
+
+    <form id="doctor">
+
+        <block>
+        <prompt> Your call is being forwarded to a doctor.</prompt>
+        <goto next="#goodbye"/>
+        </block>
+
+     </form>
+
+        <form id="doctorF">
+
+        <block>
+        <audio src="https://www.dropbox.com/s/9197wc75p5vit9q/forwardDoctor.wav?dl=1"/>
+        <goto next="#goodbyeF"/>
+        </block>
+
+     </form>
+
+    <form id="malariaSymptoms">
+        <block>
+            <prompt>You have selected Malaria Symptoms.</prompt>
+            <prompt>The common symptoms of malaria are fever, chills, headache, sweating, fatigue, nausea, and vomiting.</prompt>
+            
+            <goto next="#menu1"/>
+
+        </block>
+    
+    </form>
+    <form id="malariaTreatment">
+        <block>
+            <prompt>You have selected Malaria Treatment.</prompt>
+            <prompt>The recommended treatment for uncomplicated malaria is Artemisinin-based combination therapy (ACT).</prompt>
+            <goto next="#menu1"/>
+        </block>
+        
+    </form>
+
+    <form id="learnMore">
+        <block>
+            <prompt>You have selected Malaria prevention.</prompt>
+            <prompt>Malaria is a life-threatening disease caused by parasites that are transmitted to people through the bites of infected female mosquitoes. 
+            To prevent malaria, wear long sleeve clothing, stay inside suring sunset, use of bed nets, indoor spraying, and use antimalarial drugs. 
+            </prompt>
+            <goto next="#menu1"/>
+        </block>
+        
+    </form>
+    <form id="repeatMenu">
+        <block>
+            <goto next="#menu1"/>
+        </block>
+        
+    </form>
+    <form id="goodbye">
+        <block>
+            <prompt>Thank you for using ARIA. Goodbye.</prompt>
+            <exit/>
+        </block>
+       
+    </form>
+    <form id="malariaSymptomsF">
+        <block>
+            <audio src="https://www.dropbox.com/s/o8v1oy68e4e2l5f/MalariaSymptoms.wav?dl=1"/>
+            <goto next="#menu1"/>
+        </block>
+        
+    </form>
+    <form id="malariaTreatmentF">
+        <block>
+            <audio src="https://www.dropbox.com/s/8kv896ttx1rjolh/MalariaTreatment.wav?dl=1"/>
+            <goto next="#menu1"/>
+        </block>
+        
+    </form>
+    <form id="learnMoreF">
+        <block>
+            <audio src="https://www.dropbox.com/s/qjj8lgp8ly27582/infoPrevent.wav?dl=1"/>
+            <goto next="#menu1"/>
+        </block>
+    </form>
+    
+    <form id="repeatMenuF">
+        <block>
+            <audio src="https://www.dropbox.com/s/990cashs23ucys9/Repeat.wav?dl=1"/>
+        </block>
+    </form>
+
+    <form id="goodbyeF">
+        <block>
+            <audio src="https://www.dropbox.com/s/4oykpamta00rkqo/ThankYou.wav?dl=1"/>
+            <exit/>
+        </block>
+        
+    </form>
+    
+</vxml>
