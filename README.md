@@ -1,11 +1,10 @@
-# ICT4D
-ICT 4 Development, project at VU 2023
 
+# ICT 4 Development, project at VU, May 2023, Group 18.
 
-VoiceXML Malaria Information Helpline
+##VoiceXML Malaria Information Helpline
 This repository contains the source code for a VoiceXML-based Malaria Information Helpline. It provides users with information about malaria, its symptoms, prevention methods, treatment options, and more.
 
-Prerequisites
+##Prerequisites
 A VoiceXML interpreter or platform that supports VoiceXML 2.0
 Internet access to retrieve audio files referenced in the code
 Getting Started
@@ -36,8 +35,8 @@ Press 4 to go directly to Artemesia Dosage (French).
 Press 5 to exit the helpline.
 Throughout the helpline, users will receive audio prompts and can use DTMF tones to make selections.
 
-Customization
-You can customize the Malaria Information Helpline to fit your specific requirements. Some possible modifications include:
+##Customization
+You can customize the Malaria Information Helpline to fit your specific requirements. 
 
 Updating the audio prompts and messages to match your organization's branding or preferences.
 Modifying the menu structure or adding additional menus and choices.
